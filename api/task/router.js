@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Task = require('./model')
 
 router.get('/', (req, res, next) => {
-    Task.get()
+    Task.find()
         .then(tasks => {
             res.json(tasks)
         })

@@ -1,10 +1,13 @@
 // build your `Resource` model here
 const db = require('../../data/dbConfig')
 
-function get() {
-    return db('resource as r')
-        .leftJoin('resource as r', 'r.resource_id', 'r.resource_id')
-        .select('r.*')
+async function find(resource_id) {
+    const resourceRows = await db('resource as r')
+        .where('resource_id', resource_id)
+        return resourceRows
+    // return db('resource as r')
+    //     .leftJoin('task as t', 'p.project_id', 'r.project_id')
+    //     .select('p.*')
     // return Promise.resolve('awesome')
 }
 
@@ -16,4 +19,4 @@ function add(resource) {
     // return Promise.resolve(`${resource}`)
 }
 
-module.exports = { get, add }
+module.exports = { find, add }

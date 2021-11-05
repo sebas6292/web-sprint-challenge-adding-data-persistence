@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Resource = require('./model')
 
 router.get('/', (req, res, next) => {
-    Resource.get()
+    Resource.find()
         .then(resources => {
             res.json(resources)
         })
