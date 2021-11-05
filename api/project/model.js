@@ -1,13 +1,15 @@
 const db = require('../../data/dbConfig')
 
-async function find(project_id) {
-    const projectRows = await db('project as p')
-        .where('project_id', project_id)
-        return projectRows
+async function find() {
+    // const projectRows = await db('project as p')
+    //     .where('project_id', project_id)
+    //     return projectRows
+
     // return db('project as p')
     //     .leftJoin('resource as r', 'p.project_id', 'r.project_id')
     //     .select('p.*')
     // return Promise.resolve('awesome')
+    return db('project')
 }
 
 function add(project) {

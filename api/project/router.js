@@ -7,6 +7,12 @@ router.get('/', (req, res, next) => {
             res.json(projects)
         })
         .catch(next)
+    // try {
+    //     const project = await Project.find()
+    //     res.json(project)
+    //    } catch (err) {
+    //        next(err)
+    //    }
 })
 
 router.post('/', (req, res, next) => {
